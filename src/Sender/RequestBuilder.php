@@ -55,7 +55,7 @@ final class RequestBuilder
             $content = $encryptionContentCodingHeader.$encrypted['cipherText'];
 
             return $request
-                ->withBody(GuzzleHttp\Psr7\Utils::streamFor($content))
+                ->withBody(\GuzzleHttp\Psr7\Utils::streamFor($content))
                 ->withHeader('Content-Length', Utils::safeStrlen($content));
         }
 
